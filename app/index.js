@@ -1,31 +1,26 @@
-const puppeteer = require('puppeteer');
-
+const tesseract = require("node-tesseract-ocr")
 const ReadText = require('text-from-image');
 
+const config = {
+  lang: "eng",
+  oem: 1,
+  psm: 3,
+}
 /*
-(async () => {
-  // console.log('ok')
-  // return false
-  const browser = await puppeteer.launch({
-    //headless: false,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=800,600'],
-    ignoreHTTPSErrors: true,
-
-  });
-  const page = await browser.newPage();
-  // await page.goto("https://blog.pulipuli.info/");
-  // https://wiki.debian.org/ChangeLanguage
-  await page.goto("https://wiki.debian.org/ChangeLanguage");
-
-  let imagePath = '/2.output/example.png'
-  await page.screenshot({ path: imagePath });
-
-  // 可行 20221130-2307 
-  console.log(await ReadText(imagePath));
-
-  await browser.close();
-})();
+tesseract
+  .recognize("1.input/s.png", config)
+  .then((text) => {
+    console.log("Result:", text)
+  })
+  .catch((error) => {
+    console.log(error.message)
+  })
 */
+let main = async () => {
+  // let imagePath = '1.input/s.png'
+  let imagePath = '1.input/YzMXGdQ.png'
+  // console.log(await (tesseract.recognize("1.input/s.png", config)))
+  console.log(await ReadText(imagePath));
+}
 
-// smartcrop.crop(image, options)
-
+main()

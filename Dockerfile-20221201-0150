@@ -31,16 +31,13 @@ RUN npm i tree-kill@1.2.2
 RUN apt-get install -y python
 RUN apt-get install -y python3-opencv
 
-RUN apt-get install -y git nano wget
-RUN git clone https://github.com/johnlinp/meme-ocr.git
-RUN wget https://i.imgur.com/YzMXGdQ.jpg
-RUN apt install tesseract-ocr -y
-RUN apt install libtesseract-dev -y
-RUN /meme-ocr/main.py YzMXGdQ.jpg
+RUN apt-get install pkg-config -y
+RUN apt install libgirepository1.0-dev -y
+# RUN npm i opencv@7.0.0
 
-# COPY package.json /
-
-# WORKDIR /app
-# RUN npm i
-
-CMD ["node", "/app/index.js"]
+# RUN apt-get install -y libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
+RUN apt-get install -y python3
+RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-opencv
+RUN pip3 install keras_ocr
+RUN pip3 install Pillow==9.0.0

@@ -1,0 +1,8 @@
+#Specify the version of nodejs.
+# FROM zenato/puppeteer-renderer
+#FROM dayyass/muse_as_service:1.1.2
+FROM justadudewhohacks/opencv-nodejs
+
+# RUN apt-get update
+
+CMD ["node", "/app/index.js"]
