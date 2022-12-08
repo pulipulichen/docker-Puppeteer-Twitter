@@ -25,6 +25,10 @@
     "papaparse": "5.3.2",
     "text-from-image": "1.1.1",
     "puppeteer": "19.3.0",
-    "node-tesseract-ocr": "2.2.1"
+    "node-tesseract-ocr": "2.2.1",
+    "request": "2.88.2",
+    "json5": "2.2.1",
+    "sequelize": "6.7.0",
+    "sqlite3": "5.0.2"
   }
 }

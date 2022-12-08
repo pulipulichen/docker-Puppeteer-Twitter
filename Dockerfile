@@ -33,14 +33,16 @@ RUN apt-get install -y python3-opencv
 
 RUN apt-get install -y git nano wget
 RUN git clone https://github.com/johnlinp/meme-ocr.git
-RUN wget https://i.imgur.com/YzMXGdQ.jpg
+# RUN wget https://i.imgur.com/YzMXGdQ.jpg
 RUN apt install tesseract-ocr -y
 RUN apt install libtesseract-dev -y
-RUN /meme-ocr/main.py YzMXGdQ.jpg
+# RUN /meme-ocr/main.py YzMXGdQ.jpg
 
-# COPY package.json /
+RUN mkdir -p /3.cache/
+
+COPY package.json /
+RUN npm i
 
 # WORKDIR /app
-# RUN npm i
 
 CMD ["node", "/app/index.js"]
