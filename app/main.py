@@ -108,11 +108,12 @@ inputFiles = glob.glob("/2.output/**/*.inpaint.jpg", recursive=True)
 for inputFile in inputFiles:
   p = Path(inputFile)
   name = p.name
-  outputFile = os.path.splitext(inputFile)[0].split('-')[0] + '.crop.jpg'
+  outputFile = os.path.splitext(inputFile)[0].split('.')[0] + '.crop.jpg'
   
   if os.path.isfile(outputFile):
     print('File is exsited: ' + name)
-    # continue
+    os.remove(inputFile)
+    continue
 
   print('Processing: ' + name)
 
