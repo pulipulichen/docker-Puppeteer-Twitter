@@ -29,6 +29,7 @@
     "request": "2.88.2",
     "json5": "2.2.1",
     "sequelize": "6.7.0",
-    "sqlite3": "5.0.2"
+    "sqlite3": "5.0.2",
+    "@pulipuli.chen/fast-glob": "3.2.14"
   }
 }
