@@ -71,7 +71,7 @@ import shutil
 #inputFiles = list(set(glob.glob("/2.output/**/*.jpg")) - set(glob.glob("/2.output/**/*-inpaint.jpg")) - set(glob.glob("/2.output/**/*-crop.jpg")))
 inputFiles = glob.glob("/2.output/**/*.jpg", recursive=True)
 
-print(inputFiles)
+# print(inputFiles)
 
 for inputFile in inputFiles:
   if inputFile.endswith('.inpaint.jpg') or inputFile.endswith('.crop.jpg'):
@@ -108,14 +108,14 @@ inputFiles = glob.glob("/2.output/**/*.inpaint.jpg", recursive=True)
 for inputFile in inputFiles:
   p = Path(inputFile)
   name = p.name
-  outputFile = os.path.splitext(inputFile)[0].split('.')[0] + '.crop.jpg'
+  outputFile = inputFile[:-12] + '.crop.jpg'
   
   if os.path.isfile(outputFile):
-    print('File is exsited: ' + name)
+    print('File is exsited: ' + outputFile)
     os.remove(inputFile)
     continue
 
-  print('Processing: ' + name)
+  print('Processing: ' + inputFile + ' => ' + outputFile)
 
   image = cv2.imread(inputFile)
   height, width, channels = image.shape
@@ -135,4 +135,5 @@ for inputFile in inputFiles:
     # cropped_image = Image.fromarray(cropped_array)
     #cropped_image.save(outputFile)
     cv2.imwrite(outputFile, cv2.cvtColor(cropped_array, cv2.COLOR_BGR2RGB))
+
   os.remove(inputFile)
