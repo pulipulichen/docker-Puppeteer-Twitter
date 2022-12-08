@@ -36,3 +36,15 @@ npm run start
 - 1.crop.jpg: The cropped image of the original image.
 - 1.alt.txt: The alt message of the original image.
 - 1.ocr.txt: The OCR from the original image.
+
+# Reference
+
+## OCR
+- meme-ocr: https://github.com/johnlinp/meme-ocr
+- tesseract: https://github.com/tesseract-ocr/tesseract
+
+## Crop
+- Inpaint: https://raw.githubusercontent.com/bnsreenu/python_for_microscopists/master/Tips_Tricks_42_How%20to%20remove%20text%20from%20images.py
+- Autocrop: https://pypi.org/project/autocrop/
+- Smartcrop: https://pypi.org/project/smartcrop/
+  * Algorithm Overview: https://github.com/jwagner/smartcrop.js#algorithm-overview
