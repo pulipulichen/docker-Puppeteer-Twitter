@@ -1,12 +1,12 @@
 # docker-Puppeteer-Twitter
-Extract data from Twitter
+Crawl the text and images from Twitter.
 
 # Installation
 
 1. Install the requirement environment.
   - git https://git-scm.com/downloads
   - Docker Desktop https://www.docker.com/products/docker-desktop/
-  - Node.js (LTS) https://nodejs.org/en/
+  - Node.js (LTS) https://nodejs.org/
 2. Open the terminal (or PowerShell).
 3. Move to your desktop.
 4. Execute the following command:
@@ -23,8 +23,16 @@ git clone https://github.com/pulipulichen/docker-Puppeteer-Twitter.git
 4. Execute the following command:
 
 ````
-docker-compose up
+npm run start
 ````
+
 5. Wait for the end of the job.
 6. You can get the result in the folder `/2.output/` .
-  
+
+# Output
+
+- tweet.txt: The content of the tweet.
+- 1.jpg: The image of the tweet.
+- 1.crop.jpg: The cropped image of the original image.
+- 1.alt.txt: The alt message of the original image.
+- 1.ocr.txt: The OCR from the original image.

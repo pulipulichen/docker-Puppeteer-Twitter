@@ -5,28 +5,19 @@ services:
   # imgCrop:
   #   build: Dockerfile-imgCrop
   app:
-    #Build a Dockerfile in the same directory
     build: .
-    #Give the container a name(Any)
-    #container_name: 
-    #You can keep the container running.
     tty: true
-    #Mount the files in the directory to the app directory in the container
     volumes: 
       - ./app:/app/
       - ./1.input:/1.input/
       - ./2.output:/2.output/
       - ./3.cache:/3.cache/
-    #environment:
-    #  - url=https://www.google.com.tw/
-    #Mount port 1000 on the container side to port 8080 on the host side.
-    #ports:
-    #  - "8080:8080"
-    #command: nvidia-smi
-    #deploy:
-    #  resources:
-    #    reservations:
-    #      devices:
-            #- driver: nvidia
-            #  count: 1
-            #  capabilities: [gpu]
+  crop:
+    build: 
+      context: .
+      dockerfile: Dockerfile_crop
+    tty: true
+    volumes: 
+      - ./app:/app/
+      - ./2.output:/2.output/
+      - ./3.cache:/3.cache/
