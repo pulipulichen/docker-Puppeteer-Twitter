@@ -4,9 +4,9 @@
   "description": "DEMO: https://pulipulichen.github.io/jieba-js/",
   "main": "index.js",
   "scripts": {
-    "d0.build": "bash ./docker-compose/docker-compose-build.sh",
-    "d1.bash": "bash ./docker-compose/docker-compose-bash.sh",
-    "d2.up": "bash ./docker-compose/docker-compose-up.sh"
+    "d0.build": "docker-compose build",
+    "d1.bash": "docker-compose run app bash",
+    "d2.up": "docker-compose up"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,8 @@
     "json5": "2.2.1",
     "sequelize": "6.7.0",
     "sqlite3": "5.0.2",
-    "@pulipuli.chen/fast-glob": "3.2.14"
+    "@pulipuli.chen/fast-glob": "3.2.14",
+    "tree-kill": "1.2.2",
+    "node-tesseract": "0.2.7"
   }
 }

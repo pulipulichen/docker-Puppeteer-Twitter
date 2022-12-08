@@ -1,5 +1,8 @@
+const NodeCacheSqlite = require('../lib/node-cache-sqlite.js');
+
 const memeOCRText = require('./memeOCRText.js');
 const textFromImage = require('./textFromImage.js');
+const nodeTesseract = require('./node-tesseract.js');
 
 module.exports = async function (filepath) {
   return await NodeCacheSqlite.get('mix-ocr', filepath, async function () {
@@ -9,7 +12,8 @@ module.exports = async function (filepath) {
 
     let engines = [
       memeOCRText,
-      textFromImage
+      // textFromImage
+      nodeTesseract
     ]
 
     for (let i = 0; i < engines.length; i++) {

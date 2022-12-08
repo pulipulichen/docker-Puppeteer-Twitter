@@ -5,10 +5,12 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const memeOCRText = require('./ocr/memeOCRText.js');
-const getMetadataOfPost = require('./twitter/getMetadataOfPost.js');
+// const memeOCRText = require('./ocr/memeOCRText.js');
+// const getMetadataOfPost = require('./twitter/getMetadataOfPost.js');
 
 const grabTweet = require('./twitter/grabTweet.js');
+
+const kill = require('tree-kill');
 
 let baseDir = '/2.output/'
 let main = async () => {
@@ -41,12 +43,16 @@ let main = async () => {
     for (let j = 0; j < urls.length; j++) {
       console.log(`${filenameNoExt}: ${(j+1)}/${urls.length} (${Math.floor((j/urls.length)*100)}%) ${urls[j]}`)
       await grabTweet(page, path.join(baseDir, filenameNoExt), urls[j])
+      // console.log('ok')
     }
   }
 
   // ------------
 
   await browser.close();
+  // console.log('ok')
+  
+  kill(1, 'SIGKILL');
 }
 
 main()

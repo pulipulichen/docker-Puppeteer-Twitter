@@ -1,3 +1,6 @@
+
+let enableCache = true
+
 /* global path, __dirname, cacheClass, sequelize, databases, databaseName */
 const cachePath = './../../3.cache/'
 
@@ -15,7 +18,6 @@ let path = require('path')
 
 
 let _this = {}
-let enableCache = true
 
 let tryToRestartServer = (() => {
   let counter = 10
