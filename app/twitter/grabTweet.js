@@ -14,6 +14,7 @@ module.exports = async function (page, baseDir, url) {
   // console.log(metadata)
   let outputFolder = buildFolderFromMetadata(baseDir, metadata)
   writeTweetText(outputFolder, 'tweet.txt', metadata.text)
+  writeTweetText(outputFolder, 'url.txt', url)
 
   let images = metadata.images
   for (let i = 0; i < images.length; i++) {

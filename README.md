@@ -31,6 +31,7 @@ npm run start
 
 # Output
 
+- url.txt: The URL of the tweet.
 - tweet.txt: The content of the tweet.
 - 1.jpg: The image of the tweet.
 - 1.crop.jpg: The cropped image of the original image.
