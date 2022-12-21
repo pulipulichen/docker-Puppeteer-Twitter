@@ -15,6 +15,17 @@ Crawl the text and images from Twitter.
 git clone https://github.com/pulipulichen/docker-Puppeteer-Twitter.git
 ````
 
+# Upate
+
+1. Open the terminal (or PowerShell).
+2. Move to the folder `docker-Puppeteer-Twitter`.
+3. Execute the following command:
+
+````
+git reset --hard
+git pull --force
+````
+
 # Start the crawl job
 
 1. Put your list in the `/1.input/` . You can refer to the example of `/1.input/example.txt`.
