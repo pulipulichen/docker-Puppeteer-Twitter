@@ -42,7 +42,7 @@ let main = async () => {
 
     for (let j = 0; j < urls.length; j++) {
       console.log(`${filenameNoExt}: ${(j+1)}/${urls.length} (${Math.floor((j/urls.length)*100)}%) ${urls[j]}`)
-      await grabTweet(page, path.join(baseDir, filenameNoExt), urls[j])
+      await grabTweet(page, path.join(baseDir), urls[j])
       // console.log('ok')
     }
   }
