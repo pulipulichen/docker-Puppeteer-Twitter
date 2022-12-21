@@ -2,8 +2,8 @@ const ShellSpawn = require('./app/lib/ShellSpawn')
 
 let main = async function () {
   let commandList = [
-    'docker-compose run app node /app/index.js',
-    "docker-compose run crop python /app/main.py"
+    'git reset --hard',
+    'git pull --force'
   ]
 
   for (let i = 0; i < commandList.length; i++) {

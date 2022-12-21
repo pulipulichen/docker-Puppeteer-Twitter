@@ -15,15 +15,14 @@ Crawl the text and images from Twitter.
 git clone https://github.com/pulipulichen/docker-Puppeteer-Twitter.git
 ````
 
-# Upate
+# How to update
 
 1. Open the terminal (or PowerShell).
 2. Move to the folder `docker-Puppeteer-Twitter`.
 3. Execute the following command:
 
 ````
-git reset --hard
-git pull --force
+npm run update
 ````
 
 # Start the crawl job
