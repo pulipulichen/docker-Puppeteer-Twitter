@@ -60,3 +60,13 @@ npm run start
 - Autocrop: https://pypi.org/project/autocrop/
 - Smartcrop: https://pypi.org/project/smartcrop/
   * Algorithm Overview: https://github.com/jwagner/smartcrop.js#algorithm-overview
+
+----
+
+# Changelog
+
+## 20221222-0625
+
+- 現在在1.input放置的網址檔案統一都會擺到2.output底下，不會再因為網址檔案檔名不同而分成不同的資料夾。
+- Python偵測inpaint跟crop檔案名稱的方式重新處理。
+- 修正了Windows上執行可能碰到的問題。

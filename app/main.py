@@ -80,8 +80,10 @@ for inputFile in inputFiles:
   p = Path(inputFile)
   name = p.name
   outputFile = os.path.splitext(inputFile)[0] + '.inpaint.jpg'
+  outputFile2 = os.path.splitext(inputFile)[0] + '.crop.jpg'
+  outputFile3 = os.path.splitext(inputFile)[0] + '.inpaint.crop.jpg'
   
-  if os.path.isfile(outputFile):
+  if os.path.isfile(outputFile) or os.path.isfile(outputFile2) or os.path.isfile(outputFile3):
     print('File is exsited: ' + inputFile)
     continue
 

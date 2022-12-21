@@ -8,6 +8,7 @@ const downloadImage = require('./../lib/downloadImage.js')
 const mixOCR = require('./../ocr/mixOCR.js')
 
 const path = require('path')
+const fs = require('fs')
 
 module.exports = async function (page, baseDir, url) {
   let metadata = await getMetadataOfPost(page, url)
@@ -23,9 +24,12 @@ module.exports = async function (page, baseDir, url) {
     let imagePath = path.join(outputFolder, i + '.jpg')
     await downloadImage(src, imagePath)
     writeTweetText(outputFolder, i + '.alt.txt', alt)
-    let ocr = await mixOCR(imagePath)
-    if (ocr) {
-      writeTweetText(outputFolder, i + '.ocr.txt', ocr)
+
+    if (fs.existsSync(outputFolder, i + '.ocr.txt') === false) {
+      let ocr = await mixOCR(imagePath)
+      if (ocr) {
+        writeTweetText(outputFolder, i + '.ocr.txt', ocr)
+      }
     }
   }
 }
