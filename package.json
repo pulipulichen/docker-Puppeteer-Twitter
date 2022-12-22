@@ -9,7 +9,8 @@
     "d2.app.up": "docker-compose run app node /app/index.js",
     "d3.crop.bash": "docker-compose run crop bash",
     "d3.crop.up": "docker-compose run crop python /app/main.py",
-    "start": "node index.js"
+    "start": "node index.js",
+    "update": "node update.js"
   },
   "repository": {
     "type": "git",
