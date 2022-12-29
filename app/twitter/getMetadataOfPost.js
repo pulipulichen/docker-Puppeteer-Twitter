@@ -2,8 +2,8 @@ const NodeCacheSqlite = require('../lib/node-cache-sqlite.js');
 
 module.exports = async function (page, url) {
   return NodeCacheSqlite.get('tweet-metadata', url, async function () {
-    // await page.goto(url, {waitUntil: 'networkidle0'})
-    await page.goto(url, {waitUntil: 'domcontentloaded'})
+    await page.goto(url, {waitUntil: 'networkidle0'})
+    // await page.goto(url, {waitUntil: 'domcontentloaded'})
 
     // console.log('gogog')
     let metadata = await page.evaluate(async function () {
@@ -15,10 +15,13 @@ module.exports = async function (page, url) {
       // let type = 'text'
       // let isReply = false
       let articleNode = document.querySelector('article')
-      while (!articleNode) {
-        await sleep()
-        articleNode = document.querySelector('article')
+      if (!articleNode) {
+        throw new Error('Article node is not found.')
       }
+      // while (!articleNode) {
+        // await sleep()
+        // articleNode = document.querySelector('article')
+      // }
       
       // if (document.querySelectorAll('article .css-1dbjc4n .css-901oao.r-14j79pv.r-37j5jr.r-a023e6.r-16dba41.r-rjixqe.r-bcqeeo.r-qvutc0 a[href]:not([href*="/status/"])') !== null) {
       
