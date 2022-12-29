@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "d0.build": "docker-compose build",
-    "d1.bash": "docker-compose run app bash",
-    "d2.app.up": "docker-compose run app node /app/index.js",
+    "d1.crawl.bash": "docker-compose run app bash",
+    "d2.crawl.up": "docker-compose run app node /app/index.js",
     "d3.crop.bash": "docker-compose run crop bash",
     "d3.crop.up": "docker-compose run crop python /app/main.py",
     "start": "node index.js",
