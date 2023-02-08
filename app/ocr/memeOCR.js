@@ -5,8 +5,9 @@ const JSON5 = require('json5')
 
 module.exports = async function (filepath) {
   return await NodeCacheSqlite.get('meme-ocr', filepath, async function () {
-    let result = await execAsync(`/meme-ocr/main.py  ${filepath}`)
+    let result = false
     try {
+      result = await execAsync(`/meme-ocr/main.py  ${filepath}`)
       // eval(`result = ${result}`)
       result = JSON5.parse(result)
     } catch (e) {
