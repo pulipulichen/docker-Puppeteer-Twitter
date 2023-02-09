@@ -36,7 +36,6 @@ module.exports = async function (filepath) {
     }
 
     // let textPath = filepath.slice(0, filepath.lastIndexOf('.')) + '.txt'
-
     // fs.writeFileSync(textPath, text, 'utf8')
     return text
   })
